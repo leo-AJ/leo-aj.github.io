@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="敖晋" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.62.0" />
+
+<link rel="canonical" href="https://leo-aj.github.io/post/%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8Bd%E5%9F%BA%E4%BA%8Ehugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+<meta property="og:title" content="在win10环境下d基于hugo搭建个人博客" />
+<meta property="og:description" content="在win10环境下基于Hugo搭建个人博客 准备工作  注册Github账号  最终的文件要放到远程仓库里托管，让其他人可访问。 具体注册过程自行百度，注册完成后，新建仓库。注：仓库名一定要是:你的注册用户名.github.io   下载安装Git与Hugo  Git的下载网址：https://git-scm.com/downloads Git的安装与配置网上有很多教程，这里就不在赘述。 Hugo的下载网址：https://github.com/gohugoio/hugo/releases 在win10的环境下选择“hugo_0.57.2_Windows-64bit.zip”的版本，下载下来是一个直接可以运行的.exe文件，当然你下载的具体版本号可能不同。 Hugo下载好后，一定要把文件路径添加到环境变量中，具体方法自行百度。 若在下载过程中出现，下载速度巨慢或者连接失败，可以找找淘宝的镜像，当然还有我的百度云连接奉上：https://pan.baidu.com/s/18QaW5rWaErmxecpluhQoXQ	提取码：4mvr    开始搭建博客   打开windows的“命令提示符”（Win &#43; R，输入cmd）。
+  进入你想要的路径，开始新建本地站点
+d: cd github hugo new site blog 进入D盘的github目录下就可以看到一个blog文件夹（为该站点的根目录），进入该文件夹，里面有若干子文件。
+  下载主题：进入https://themes.gohugo.io/挑选一个自己喜欢的主题，进入之后里面具体的安装配置方法。安装好主题后，在blog文件夹下的themes文件夹下有主题的文件，文件名一般为该主题的主题名。在这里吐槽一下，要看懂安装说明还是需要一定的英文水平，我就在网上找了一个大神的，copy下来自己该了改，但是我没有学过前端，照猫画虎修改了几处，效果就是你们现在看到的样子。
+  在本地启动，看看主题效果
+hugo server -t 主题名 --buildDrafts 若成功，则在最下面一行可以找到 http://localhost:1313/ 的本地浏览网址，复制下来在浏览器里打开就可以看到博客的样子了，当然现在里面还没有一篇博文。
+  编写自己的博客
+hugo new post/搭建博客.md 执行这条命令后，就会在blog\content\post文件夹下生成搭建博客.md的文件，接下来就可以进行编辑你的博客了，推荐用Typora进行编写，因为太好用了，哈哈哈。
+  再次输入步骤四的命令，打开http://localhost:1313/ ，就可以在本地打开，看到你刚刚写的第一篇博文了。
+  生成静态网站有关文件
+hugo --theme=主题名 --baseUrl=&quot;https://账号名.github.io/&quot; --buildDrafts 执行这条命令后，就会在blog\public\文件夹下生成有关文件" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://leo-aj.github.io/post/%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8Bd%E5%9F%BA%E4%BA%8Ehugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" />
+<meta property="article:published_time" content="2019-12-29T10:01:45+08:00" />
+<meta property="article:modified_time" content="2019-12-29T10:01:45+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="在win10环境下d基于hugo搭建个人博客"/>
+<meta name="twitter:description" content="在win10环境下基于Hugo搭建个人博客 准备工作  注册Github账号  最终的文件要放到远程仓库里托管，让其他人可访问。 具体注册过程自行百度，注册完成后，新建仓库。注：仓库名一定要是:你的注册用户名.github.io   下载安装Git与Hugo  Git的下载网址：https://git-scm.com/downloads Git的安装与配置网上有很多教程，这里就不在赘述。 Hugo的下载网址：https://github.com/gohugoio/hugo/releases 在win10的环境下选择“hugo_0.57.2_Windows-64bit.zip”的版本，下载下来是一个直接可以运行的.exe文件，当然你下载的具体版本号可能不同。 Hugo下载好后，一定要把文件路径添加到环境变量中，具体方法自行百度。 若在下载过程中出现，下载速度巨慢或者连接失败，可以找找淘宝的镜像，当然还有我的百度云连接奉上：https://pan.baidu.com/s/18QaW5rWaErmxecpluhQoXQ	提取码：4mvr    开始搭建博客   打开windows的“命令提示符”（Win &#43; R，输入cmd）。
+  进入你想要的路径，开始新建本地站点
+d: cd github hugo new site blog 进入D盘的github目录下就可以看到一个blog文件夹（为该站点的根目录），进入该文件夹，里面有若干子文件。
+  下载主题：进入https://themes.gohugo.io/挑选一个自己喜欢的主题，进入之后里面具体的安装配置方法。安装好主题后，在blog文件夹下的themes文件夹下有主题的文件，文件名一般为该主题的主题名。在这里吐槽一下，要看懂安装说明还是需要一定的英文水平，我就在网上找了一个大神的，copy下来自己该了改，但是我没有学过前端，照猫画虎修改了几处，效果就是你们现在看到的样子。
+  在本地启动，看看主题效果
+hugo server -t 主题名 --buildDrafts 若成功，则在最下面一行可以找到 http://localhost:1313/ 的本地浏览网址，复制下来在浏览器里打开就可以看到博客的样子了，当然现在里面还没有一篇博文。
+  编写自己的博客
+hugo new post/搭建博客.md 执行这条命令后，就会在blog\content\post文件夹下生成搭建博客.md的文件，接下来就可以进行编辑你的博客了，推荐用Typora进行编写，因为太好用了，哈哈哈。
+  再次输入步骤四的命令，打开http://localhost:1313/ ，就可以在本地打开，看到你刚刚写的第一篇博文了。
+  生成静态网站有关文件
+hugo --theme=主题名 --baseUrl=&quot;https://账号名.github.io/&quot; --buildDrafts 执行这条命令后，就会在blog\public\文件夹下生成有关文件"/>
+
+
+<meta itemprop="name" content="在win10环境下d基于hugo搭建个人博客">
+<meta itemprop="description" content="在win10环境下基于Hugo搭建个人博客 准备工作  注册Github账号  最终的文件要放到远程仓库里托管，让其他人可访问。 具体注册过程自行百度，注册完成后，新建仓库。注：仓库名一定要是:你的注册用户名.github.io   下载安装Git与Hugo  Git的下载网址：https://git-scm.com/downloads Git的安装与配置网上有很多教程，这里就不在赘述。 Hugo的下载网址：https://github.com/gohugoio/hugo/releases 在win10的环境下选择“hugo_0.57.2_Windows-64bit.zip”的版本，下载下来是一个直接可以运行的.exe文件，当然你下载的具体版本号可能不同。 Hugo下载好后，一定要把文件路径添加到环境变量中，具体方法自行百度。 若在下载过程中出现，下载速度巨慢或者连接失败，可以找找淘宝的镜像，当然还有我的百度云连接奉上：https://pan.baidu.com/s/18QaW5rWaErmxecpluhQoXQ	提取码：4mvr    开始搭建博客   打开windows的“命令提示符”（Win &#43; R，输入cmd）。
+  进入你想要的路径，开始新建本地站点
+d: cd github hugo new site blog 进入D盘的github目录下就可以看到一个blog文件夹（为该站点的根目录），进入该文件夹，里面有若干子文件。
+  下载主题：进入https://themes.gohugo.io/挑选一个自己喜欢的主题，进入之后里面具体的安装配置方法。安装好主题后，在blog文件夹下的themes文件夹下有主题的文件，文件名一般为该主题的主题名。在这里吐槽一下，要看懂安装说明还是需要一定的英文水平，我就在网上找了一个大神的，copy下来自己该了改，但是我没有学过前端，照猫画虎修改了几处，效果就是你们现在看到的样子。
+  在本地启动，看看主题效果
+hugo server -t 主题名 --buildDrafts 若成功，则在最下面一行可以找到 http://localhost:1313/ 的本地浏览网址，复制下来在浏览器里打开就可以看到博客的样子了，当然现在里面还没有一篇博文。
+  编写自己的博客
+hugo new post/搭建博客.md 执行这条命令后，就会在blog\content\post文件夹下生成搭建博客.md的文件，接下来就可以进行编辑你的博客了，推荐用Typora进行编写，因为太好用了，哈哈哈。
+  再次输入步骤四的命令，打开http://localhost:1313/ ，就可以在本地打开，看到你刚刚写的第一篇博文了。
+  生成静态网站有关文件
+hugo --theme=主题名 --baseUrl=&quot;https://账号名.github.io/&quot; --buildDrafts 执行这条命令后，就会在blog\public\文件夹下生成有关文件">
+<meta itemprop="datePublished" content="2019-12-29T10:01:45&#43;08:00" />
+<meta itemprop="dateModified" content="2019-12-29T10:01:45&#43;08:00" />
+<meta itemprop="wordCount" content="86">
+
+
+
+<meta itemprop="keywords" content="" />
+
+<link rel="stylesheet" href="https://leo-aj.github.io/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://leo-aj.github.io/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     在win10环境下d基于hugo搭建个人博客 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://leo-aj.github.io/">魏落阳城的博客</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://leo-aj.github.io/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://leo-aj.github.io/tags/"><div class="nav-item-title">Tags</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:weiluoyangcheng@outlook.com"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/leo-AJ" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> 在win10环境下d基于hugo搭建个人博客 </h1>
+    <div class="content"> <h1 id="win10hugo">在win10环境下基于Hugo搭建个人博客</h1>
+<h2 id="heading">准备工作</h2>
+<ol>
+<li>注册Github账号
+<ul>
+<li>最终的文件要放到远程仓库里托管，让其他人可访问。</li>
+<li>具体注册过程自行百度，注册完成后，新建仓库。<strong>注：仓库名一定要是:你的注册用户名.github.io</strong></li>
+</ul>
+</li>
+<li>下载安装Git与Hugo
+<ul>
+<li>Git的下载网址：<a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></li>
+<li>Git的安装与配置网上有很多教程，这里就不在赘述。</li>
+<li>Hugo的下载网址：<a href="https://github.com/gohugoio/hugo/releases">https://github.com/gohugoio/hugo/releases</a></li>
+<li>在win10的环境下选择“hugo_0.57.2_Windows-64bit.zip”的版本，下载下来是一个直接可以运行的.exe文件，当然你下载的具体版本号可能不同。</li>
+<li><strong>Hugo下载好后，一定要把文件路径添加到环境变量中，具体方法自行百度。</strong></li>
+<li>若在下载过程中出现，下载速度巨慢或者连接失败，可以找找淘宝的镜像，当然还有我的百度云连接奉上：https://pan.baidu.com/s/18QaW5rWaErmxecpluhQoXQ	提取码：4mvr</li>
+</ul>
+</li>
+</ol>
+<h2 id="heading-1">开始搭建博客</h2>
+<ol>
+<li>
+<p>打开windows的“命令提示符”（Win + R，输入cmd）。</p>
+</li>
+<li>
+<p>进入你想要的路径，开始新建本地站点</p>
+<pre><code>d:
+cd github
+hugo new site blog
+</code></pre><p>进入D盘的github目录下就可以看到一个blog文件夹（为该站点的根目录），进入该文件夹，里面有若干子文件。</p>
+</li>
+<li>
+<p>下载主题：进入<a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a>挑选一个自己喜欢的主题，进入之后里面具体的安装配置方法。安装好主题后，在blog文件夹下的themes文件夹下有主题的文件，文件名一般为该主题的主题名。在这里吐槽一下，要看懂安装说明还是需要一定的英文水平，我就在网上找了一个大神的，copy下来自己该了改，但是我没有学过前端，照猫画虎修改了几处，效果就是你们现在看到的样子。</p>
+</li>
+<li>
+<p>在本地启动，看看主题效果</p>
+<pre><code>hugo server -t 主题名 --buildDrafts
+</code></pre><p>若成功，则在最下面一行可以找到 http://localhost:1313/ 的本地浏览网址，复制下来在浏览器里打开就可以看到博客的样子了，当然现在里面还没有一篇博文。</p>
+</li>
+<li>
+<p>编写自己的博客</p>
+<pre><code>hugo new post/搭建博客.md
+</code></pre><p>执行这条命令后，就会在blog\content\post文件夹下生成搭建博客.md的文件，接下来就可以进行编辑你的博客了，推荐用Typora进行编写，因为太好用了，哈哈哈。</p>
+</li>
+<li>
+<p>再次输入步骤四的命令，打开http://localhost:1313/ ，就可以在本地打开，看到你刚刚写的第一篇博文了。</p>
+</li>
+<li>
+<p>生成静态网站有关文件</p>
+<pre><code>hugo --theme=主题名 --baseUrl=&quot;https://账号名.github.io/&quot; --buildDrafts
+</code></pre><p>执行这条命令后，就会在blog\public\文件夹下生成有关文件</p>
+</li>
+<li>
+<p>将public文件夹传送到远端,<strong>此步骤最好在git bash下完成</strong></p>
+<pre><code>cd public
+git init
+git add .
+git commit -m &quot;第一次提交&quot;
+git reomte add origin https://github.com/账号名/仓库名.git
+git push -u origin master
+</code></pre><p>传送完成后，在浏览器里输入你的仓库名就可以访问你的博客了。例如：<a href="https://leo-aj.github.io/">https://leo-aj.github.io/</a></p>
+</li>
+</ol>
+<h2 id="heading-2">修改与添加博客</h2>
+<p>若要修改，或者写新的博客，回到搭建的第五步，再来一次即可，至少我现在只知道这么干，若有其他方法更好。</p>
+<p><strong>当然，要去掉 git init 和 git reomte add origin <a href="https://github.com/">https://github.com/</a>账号名/仓库名.git ；这两条命令。</strong></p>
+<p>搭建的前提是git的安装与配置是可用的，git绝对是个好东西，值得学习。</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+</div>
+
+    <div class="date"> 29 Dec 2019 </div>
+  </div>
+
+</footer>
+
+
+  
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:weiluoyangcheng@outlook.com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/leo-AJ" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="https://leo-aj.github.io/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> 版权为敖晋个人所有 </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+
