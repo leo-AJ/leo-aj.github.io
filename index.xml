@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>版权为敖晋个人所有</copyright>
-    <lastBuildDate>Fri, 03 Jan 2020 17:06:17 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 04 Jan 2020 17:14:37 +0800</lastBuildDate>
     
 	<atom:link href="https://leo-AJ.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>栈的链式存储结构</title>
+      <link>https://leo-AJ.github.io/post/%E6%A0%88%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Sat, 04 Jan 2020 17:14:37 +0800</pubDate>
+      
+      <guid>https://leo-AJ.github.io/post/%E6%A0%88%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/</guid>
+      <description>栈的链式存储结构 先上代码： 头文件：
+#ifndef _STACK_H_#define _STACK_H_ #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt; typedef int SElemType; typedef struct StackNode { SElemType data; struct StackNode* next; }StackNode; typedef struct StackNode* LinkStackPtr; typedef struct LinkStack { LinkStackPtr top; int counter; }LinkStack; void CreatStack(LinkStack* S); int Push(LinkStack* S,SElemType e); int Pop(LinkStack* S,SElemType* e); void ClearStack(LinkStack* S); void TraveStack(LinkStack* S); #endif // _STACK_H_  具体实现：
+#include &amp;#34;stack.h&amp;#34; void CreatStack(LinkStack* S) { S-&amp;gt;top = NULL; S-&amp;gt;counter = 0; } int Push(LinkStack* S,SElemType e) { LinkStackPtr s = (LinkStackPtr)malloc(sizeof(StackNode)); s-&amp;gt;data = e; s-&amp;gt;next = S-&amp;gt;top; S-&amp;gt;top = s; S-&amp;gt;counter++; return 0; } int Pop(LinkStack* S,SElemType* e) { LinkStackPtr p; if(S-&amp;gt;counter == 0) return -1; *e = S-&amp;gt;top-&amp;gt;data; p = S-&amp;gt;top; S-&amp;gt;top = S-&amp;gt;top-&amp;gt;next; free(p); S-&amp;gt;counter--; return 0; } void ClearStack(LinkStack* S) { LinkStackPtr p,q; p = S-&amp;gt;top; while(p) { q = p-&amp;gt;next; free(p); p = q; } S-&amp;gt;top = NULL; printf(&amp;#34;Stack is clear&amp;#34;); } void TraveStack(LinkStack* S) { LinkStackPtr p; p = S-&amp;gt;top; while(p) { printf(&amp;#34;%d\n&amp;#34;,p-&amp;gt;data); p = p-&amp;gt;next; } } 测试：</description>
+    </item>
     
     <item>
       <title>刷题 链表1（C语言）</title>
