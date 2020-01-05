@@ -2,22 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 魏落阳城的博客</title>
-    <link>https://leo-AJ.github.io/post/</link>
+    <link>https//:leo-AJ.github.io/post/</link>
     <description>Recent content in Posts on 魏落阳城的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>版权为敖晋个人所有</copyright>
-    <lastBuildDate>Sat, 04 Jan 2020 17:14:37 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jan 2020 16:05:20 +0800</lastBuildDate>
     
-	<atom:link href="https://leo-AJ.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https//:leo-AJ.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>刷题 栈1(C)</title>
+      <link>https//:leo-AJ.github.io/post/%E5%88%B7%E9%A2%98-%E6%A0%881c/</link>
+      <pubDate>Sun, 05 Jan 2020 16:05:20 +0800</pubDate>
+      
+      <guid>https//:leo-AJ.github.io/post/%E5%88%B7%E9%A2%98-%E6%A0%881c/</guid>
+      <description>刷题-栈1 （C语言） 题目描述： 给定一个只包括 &amp;lsquo;(&#39;，&#39;)&#39;，&#39;{&#39;，&#39;}&#39;，&#39;[&#39;，&#39;]&amp;rsquo; 的字符串，判断字符串是否有效。
+有效字符串需满足：
+ 左括号必须用相同类型的右括号闭合。 左括号必须以正确的顺序闭合。  示例 1: 输入: &amp;ldquo;()&amp;rdquo; 输出: true
+示例 2: 输入: &amp;ldquo;()[]{}&amp;rdquo; 输出: true
+示例 3: 输入: &amp;ldquo;(]&amp;rdquo; 输出: false
+示例 4: 输入: &amp;ldquo;([)]&amp;rdquo; 输出: false
+示例 5: 输入: &amp;ldquo;{[]}&amp;rdquo; 输出: true
+解题思想：  根据字符串的长度建立一个顺序存储结构的栈 逐一读取字符串中的字符，只要是左括号都压入栈内 若遇到右括号则与栈顶元素相比较，若不匹配则返回false，若匹配，则出栈栈顶左括号，继续读取字符 最后返回栈顶序号的取反值：若还有左括号在栈中即为false，若栈为空为true  代码： bool isValid(char * s){ int top = 0; int i; char* p = (char*)malloc(strlen(s) + 1); for(i = 0;i &amp;lt; strlen(s);i++) { if((s[i] == &amp;#39;(&amp;#39;) || (s[i] == &amp;#39;[&amp;#39;) || (s[i] == &amp;#39;{&amp;#39;)){ p[top++] = s[i]; } else{ if((--top) &amp;lt; 0)//top先减一，指向栈顶元素  return false; if(s[i] == &amp;#39;)&amp;#39; &amp;amp;&amp;amp; p[top] !</description>
+    </item>
+    
+    <item>
       <title>栈的链式存储结构</title>
-      <link>https://leo-AJ.github.io/post/%E6%A0%88%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/</link>
+      <link>https//:leo-AJ.github.io/post/%E6%A0%88%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/</link>
       <pubDate>Sat, 04 Jan 2020 17:14:37 +0800</pubDate>
       
-      <guid>https://leo-AJ.github.io/post/%E6%A0%88%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/</guid>
+      <guid>https//:leo-AJ.github.io/post/%E6%A0%88%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/</guid>
       <description>栈的链式存储结构 先上代码： 头文件：
 #ifndef _STACK_H_#define _STACK_H_ #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt; typedef int SElemType; typedef struct StackNode { SElemType data; struct StackNode* next; }StackNode; typedef struct StackNode* LinkStackPtr; typedef struct LinkStack { LinkStackPtr top; int counter; }LinkStack; void CreatStack(LinkStack* S); int Push(LinkStack* S,SElemType e); int Pop(LinkStack* S,SElemType* e); void ClearStack(LinkStack* S); void TraveStack(LinkStack* S); #endif // _STACK_H_  具体实现：
 #include &amp;#34;stack.h&amp;#34; void CreatStack(LinkStack* S) { S-&amp;gt;top = NULL; S-&amp;gt;counter = 0; } int Push(LinkStack* S,SElemType e) { LinkStackPtr s = (LinkStackPtr)malloc(sizeof(StackNode)); s-&amp;gt;data = e; s-&amp;gt;next = S-&amp;gt;top; S-&amp;gt;top = s; S-&amp;gt;counter++; return 0; } int Pop(LinkStack* S,SElemType* e) { LinkStackPtr p; if(S-&amp;gt;counter == 0) return -1; *e = S-&amp;gt;top-&amp;gt;data; p = S-&amp;gt;top; S-&amp;gt;top = S-&amp;gt;top-&amp;gt;next; free(p); S-&amp;gt;counter--; return 0; } void ClearStack(LinkStack* S) { LinkStackPtr p,q; p = S-&amp;gt;top; while(p) { q = p-&amp;gt;next; free(p); p = q; } S-&amp;gt;top = NULL; printf(&amp;#34;Stack is clear&amp;#34;); } void TraveStack(LinkStack* S) { LinkStackPtr p; p = S-&amp;gt;top; while(p) { printf(&amp;#34;%d\n&amp;#34;,p-&amp;gt;data); p = p-&amp;gt;next; } } 测试：</description>
@@ -25,10 +41,10 @@
     
     <item>
       <title>刷题 链表1（C语言）</title>
-      <link>https://leo-AJ.github.io/post/%E5%88%B7%E9%A2%98-%E9%93%BE%E8%A1%A81c%E8%AF%AD%E8%A8%80/</link>
+      <link>https//:leo-AJ.github.io/post/%E5%88%B7%E9%A2%98-%E9%93%BE%E8%A1%A81c%E8%AF%AD%E8%A8%80/</link>
       <pubDate>Fri, 03 Jan 2020 17:06:17 +0800</pubDate>
       
-      <guid>https://leo-AJ.github.io/post/%E5%88%B7%E9%A2%98-%E9%93%BE%E8%A1%A81c%E8%AF%AD%E8%A8%80/</guid>
+      <guid>https//:leo-AJ.github.io/post/%E5%88%B7%E9%A2%98-%E9%93%BE%E8%A1%A81c%E8%AF%AD%E8%A8%80/</guid>
       <description>刷题-链表1（C语言） 题目描述： 将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
 示例：
 输入：1-&amp;gt;2-&amp;gt;4, 1-&amp;gt;3-&amp;gt;4 输出：1-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;4
@@ -37,28 +53,28 @@
     
     <item>
       <title>线性表的链式存储结构</title>
-      <link>https://leo-AJ.github.io/post/%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/</link>
+      <link>https//:leo-AJ.github.io/post/%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/</link>
       <pubDate>Thu, 02 Jan 2020 21:02:46 +0800</pubDate>
       
-      <guid>https://leo-AJ.github.io/post/%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/</guid>
+      <guid>https//:leo-AJ.github.io/post/%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/</guid>
       <description>线性表的链式存储结构 先上代码： #ifndef _LIST_H_#define _LIST_H_ #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;#include &amp;lt;time.h&amp;gt; typedef int ElemType; typedef struct Node { ElemType data; struct Node* next; } Node; typedef struct Node* LinkList; void CreateListHead(LinkList *L,int n); int TraveList(LinkList L); int getElem(LinkList L,int i,ElemType* e); int ListInsert(LinkList* L,int i,ElemType e); int ListDelete(LinkList* L,int i,ElemType* e); int ClearList(LinkList* L); #endif // _LIST_H_  #include &amp;#34;list.h&amp;#34; void CreateListHead(LinkList* L,int n){ LinkList p; int i; *L = (LinkList)malloc(sizeof(Node)); (*L)-&amp;gt;next = NULL; srand(time(0));//初始化随机数种子  for(i = 0;i &amp;lt; n;i++){ p = (LinkList)malloc(sizeof(Node));//为新节点开辟空间  p-&amp;gt;data = rand()%100 + 1; p-&amp;gt;next = (*L)-&amp;gt;next; (*L)-&amp;gt;next = p; } } int TraveList(LinkList L) { int i = 0; LinkList p; p = L; while(p-&amp;gt;next) { i++; p=p-&amp;gt;next; printf(&amp;#34;the number is %d,the data is %d\n&amp;#34;,i,p-&amp;gt;data); } return i; } int getElem(LinkList L,int i,ElemType* e){ int j = 1; LinkList p; p = L-&amp;gt;next; while(p &amp;amp;&amp;amp; j&amp;lt;i) { p = p-&amp;gt;next; j++; } if(!</description>
     </item>
     
     <item>
       <title>线性表的顺序存储结构</title>
-      <link>https://leo-AJ.github.io/post/%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/</link>
+      <link>https//:leo-AJ.github.io/post/%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/</link>
       <pubDate>Wed, 01 Jan 2020 17:51:06 +0800</pubDate>
       
-      <guid>https://leo-AJ.github.io/post/%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/</guid>
+      <guid>https//:leo-AJ.github.io/post/%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/</guid>
       <description>线性表的顺序存储结构 先上代码： #include &amp;#34;Sqlist.h&amp;#34;//各个函数的具体实现 int Init_SqList(SqList* L){ for(int i = 0;i &amp;lt; MAXSIZE;i++) L-&amp;gt;data[i] = 0; L-&amp;gt;length = 0; return 0; } int Get_Elem(SqList* L,int i,ElemType* e){ if(L-&amp;gt;length == 0 || i &amp;lt; 1 || (i &amp;gt; L-&amp;gt;length)) return -1; *e = L-&amp;gt;data[i-1]; return 0; } int Insert_Elem(SqList* L,int i,ElemType e){ int k = 0; if(L-&amp;gt;length == MAXSIZE) return -1; if((i &amp;gt; (L-&amp;gt;length) + 1) || i &amp;lt; 1) return -1; if(i &amp;lt;= L-&amp;gt;length){ for(k = L-&amp;gt;length -1;k &amp;gt;= i-1;k--) L-&amp;gt;data[k+1] = L-&amp;gt;data[k]; } L-&amp;gt;data[i-1] = e; L-&amp;gt;length++; return 0; } int Delete_Elem(SqList* L,int i,ElemType* e){ int k = 0; if(L-&amp;gt;length == 0) return -1; if((i &amp;gt; L-&amp;gt;length) || i &amp;lt; 1) return -1; *e = L-&amp;gt;data[i-1]; if(i &amp;lt; L-&amp;gt;length){ for(k = i;k &amp;lt; L-&amp;gt;length;k++) L-&amp;gt;data[k-1] = L-&amp;gt;data[k]; } L-&amp;gt;length--; return 0; } int Search_Elem(SqList* L,ElemType e){ int i = 0; if(L-&amp;gt;length == 0) return -1; for (i = 0;i &amp;lt; L-&amp;gt;length;i++){ if(e == L-&amp;gt;data[i]) return i+1; } return -1; } int Modify_Elem(SqList* L,int i,ElemType e){ if(L-&amp;gt;length == 0) return -1; if((i &amp;gt; L-&amp;gt;length) || i &amp;lt; 1) return -1; if(i &amp;lt; L-&amp;gt;length){ L-&amp;gt;data[i-1] = e; } return 0; } #ifndef __SQLIST_H_#define __SQLIST_H_ #define MAXSIZE 20typedef int ElemType; typedef struct{ ElemType data[MAXSIZE]; int length; } SqList; int Init_SqList(SqList* L); int Get_Elem(SqList* L,int i,ElemType* e); int Insert_Elem(SqList* L,int i,ElemType e); int Delete_Elem(SqList* L,int i,ElemType* e); int Search_Elem(SqList* L,ElemType e); int Modify_Elem(SqList* L,int i,ElemType e); #endif // __SQLIST_H_  #include &amp;lt;stdio.</description>
     </item>
     
     <item>
       <title>在win10环境下d基于hugo搭建个人博客</title>
-      <link>https://leo-AJ.github.io/post/%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8Bd%E5%9F%BA%E4%BA%8Ehugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+      <link>https//:leo-AJ.github.io/post/%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8Bd%E5%9F%BA%E4%BA%8Ehugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Sun, 29 Dec 2019 10:01:45 +0800</pubDate>
       
-      <guid>https://leo-AJ.github.io/post/%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8Bd%E5%9F%BA%E4%BA%8Ehugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <guid>https//:leo-AJ.github.io/post/%E5%9C%A8win10%E7%8E%AF%E5%A2%83%E4%B8%8Bd%E5%9F%BA%E4%BA%8Ehugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
       <description>在win10环境下基于Hugo搭建个人博客 准备工作  注册Github账号  最终的文件要放到远程仓库里托管，让其他人可访问。 具体注册过程自行百度，注册完成后，新建仓库。注：仓库名一定要是:你的注册用户名.github.io   下载安装Git与Hugo  Git的下载网址：https://git-scm.com/downloads Git的安装与配置网上有很多教程，这里就不在赘述。 Hugo的下载网址：https://github.com/gohugoio/hugo/releases 在win10的环境下选择“hugo_0.57.2_Windows-64bit.zip”的版本，下载下来是一个直接可以运行的.exe文件，当然你下载的具体版本号可能不同。 Hugo下载好后，一定要把文件路径添加到环境变量中，具体方法自行百度。 若在下载过程中出现，下载速度巨慢或者连接失败，可以找找淘宝的镜像，当然还有我的百度云连接奉上：https://pan.baidu.com/s/18QaW5rWaErmxecpluhQoXQ	提取码：4mvr    开始搭建博客   打开windows的“命令提示符”（Win + R，输入cmd）。
   进入你想要的路径，开始新建本地站点
 d: cd github hugo new site blog 进入D盘的github目录下就可以看到一个blog文件夹（为该站点的根目录），进入该文件夹，里面有若干子文件。

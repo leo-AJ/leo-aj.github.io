@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="敖晋" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.62.0" />
+
+<link rel="canonical" href="https//:leo-AJ.github.io/post/%E5%88%B7%E9%A2%98-%E6%A0%881c/">
+<meta property="og:title" content="刷题 栈1(C)" />
+<meta property="og:description" content="刷题-栈1 （C语言） 题目描述： 给定一个只包括 &lsquo;(&#39;，&#39;)&#39;，&#39;{&#39;，&#39;}&#39;，&#39;[&#39;，&#39;]&rsquo; 的字符串，判断字符串是否有效。
+有效字符串需满足：
+ 左括号必须用相同类型的右括号闭合。 左括号必须以正确的顺序闭合。  示例 1: 输入: &ldquo;()&rdquo; 输出: true
+示例 2: 输入: &ldquo;()[]{}&rdquo; 输出: true
+示例 3: 输入: &ldquo;(]&rdquo; 输出: false
+示例 4: 输入: &ldquo;([)]&rdquo; 输出: false
+示例 5: 输入: &ldquo;{[]}&rdquo; 输出: true
+解题思想：  根据字符串的长度建立一个顺序存储结构的栈 逐一读取字符串中的字符，只要是左括号都压入栈内 若遇到右括号则与栈顶元素相比较，若不匹配则返回false，若匹配，则出栈栈顶左括号，继续读取字符 最后返回栈顶序号的取反值：若还有左括号在栈中即为false，若栈为空为true  代码： bool isValid(char * s){ int top = 0; int i; char* p = (char*)malloc(strlen(s) &#43; 1); for(i = 0;i &lt; strlen(s);i&#43;&#43;) { if((s[i] == &#39;(&#39;) || (s[i] == &#39;[&#39;) || (s[i] == &#39;{&#39;)){ p[top&#43;&#43;] = s[i]; } else{ if((--top) &lt; 0)//top先减一，指向栈顶元素  return false; if(s[i] == &#39;)&#39; &amp;&amp; p[top] !" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https//:leo-AJ.github.io/post/%E5%88%B7%E9%A2%98-%E6%A0%881c/" />
+<meta property="article:published_time" content="2020-01-05T16:05:20+08:00" />
+<meta property="article:modified_time" content="2020-01-05T16:05:20+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="刷题 栈1(C)"/>
+<meta name="twitter:description" content="刷题-栈1 （C语言） 题目描述： 给定一个只包括 &lsquo;(&#39;，&#39;)&#39;，&#39;{&#39;，&#39;}&#39;，&#39;[&#39;，&#39;]&rsquo; 的字符串，判断字符串是否有效。
+有效字符串需满足：
+ 左括号必须用相同类型的右括号闭合。 左括号必须以正确的顺序闭合。  示例 1: 输入: &ldquo;()&rdquo; 输出: true
+示例 2: 输入: &ldquo;()[]{}&rdquo; 输出: true
+示例 3: 输入: &ldquo;(]&rdquo; 输出: false
+示例 4: 输入: &ldquo;([)]&rdquo; 输出: false
+示例 5: 输入: &ldquo;{[]}&rdquo; 输出: true
+解题思想：  根据字符串的长度建立一个顺序存储结构的栈 逐一读取字符串中的字符，只要是左括号都压入栈内 若遇到右括号则与栈顶元素相比较，若不匹配则返回false，若匹配，则出栈栈顶左括号，继续读取字符 最后返回栈顶序号的取反值：若还有左括号在栈中即为false，若栈为空为true  代码： bool isValid(char * s){ int top = 0; int i; char* p = (char*)malloc(strlen(s) &#43; 1); for(i = 0;i &lt; strlen(s);i&#43;&#43;) { if((s[i] == &#39;(&#39;) || (s[i] == &#39;[&#39;) || (s[i] == &#39;{&#39;)){ p[top&#43;&#43;] = s[i]; } else{ if((--top) &lt; 0)//top先减一，指向栈顶元素  return false; if(s[i] == &#39;)&#39; &amp;&amp; p[top] !"/>
+
+
+<meta itemprop="name" content="刷题 栈1(C)">
+<meta itemprop="description" content="刷题-栈1 （C语言） 题目描述： 给定一个只包括 &lsquo;(&#39;，&#39;)&#39;，&#39;{&#39;，&#39;}&#39;，&#39;[&#39;，&#39;]&rsquo; 的字符串，判断字符串是否有效。
+有效字符串需满足：
+ 左括号必须用相同类型的右括号闭合。 左括号必须以正确的顺序闭合。  示例 1: 输入: &ldquo;()&rdquo; 输出: true
+示例 2: 输入: &ldquo;()[]{}&rdquo; 输出: true
+示例 3: 输入: &ldquo;(]&rdquo; 输出: false
+示例 4: 输入: &ldquo;([)]&rdquo; 输出: false
+示例 5: 输入: &ldquo;{[]}&rdquo; 输出: true
+解题思想：  根据字符串的长度建立一个顺序存储结构的栈 逐一读取字符串中的字符，只要是左括号都压入栈内 若遇到右括号则与栈顶元素相比较，若不匹配则返回false，若匹配，则出栈栈顶左括号，继续读取字符 最后返回栈顶序号的取反值：若还有左括号在栈中即为false，若栈为空为true  代码： bool isValid(char * s){ int top = 0; int i; char* p = (char*)malloc(strlen(s) &#43; 1); for(i = 0;i &lt; strlen(s);i&#43;&#43;) { if((s[i] == &#39;(&#39;) || (s[i] == &#39;[&#39;) || (s[i] == &#39;{&#39;)){ p[top&#43;&#43;] = s[i]; } else{ if((--top) &lt; 0)//top先减一，指向栈顶元素  return false; if(s[i] == &#39;)&#39; &amp;&amp; p[top] !">
+<meta itemprop="datePublished" content="2020-01-05T16:05:20&#43;08:00" />
+<meta itemprop="dateModified" content="2020-01-05T16:05:20&#43;08:00" />
+<meta itemprop="wordCount" content="121">
+
+
+
+<meta itemprop="keywords" content="" />
+
+<link rel="stylesheet" href="https//:leo-AJ.github.io/css/layout.css" />
+
+
+<link rel="stylesheet" href="https//:leo-AJ.github.io/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     刷题 栈1(C) 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https//:leo-AJ.github.io/">魏落阳城的博客</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https//:leo-AJ.github.io/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https//:leo-AJ.github.io/tags/"><div class="nav-item-title">Tags</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:weiluoyangcheng@outlook.com"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/leo-AJ" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> 刷题 栈1(C) </h1>
+    <div class="content"> <h1 id="-1-c">刷题-栈1 （C语言）</h1>
+<h2 id="heading">题目描述：</h2>
+<p>给定一个只包括 &lsquo;('，')'，'{'，'}'，'['，']&rsquo; 的字符串，判断字符串是否有效。</p>
+<p>有效字符串需满足：</p>
+<ol>
+<li>左括号必须用相同类型的右括号闭合。</li>
+<li>左括号必须以正确的顺序闭合。</li>
+</ol>
+<p>示例 1:
+输入: &ldquo;()&rdquo;
+输出: true</p>
+<p>示例 2:
+输入: &ldquo;()[]{}&rdquo;
+输出: true</p>
+<p>示例 3:
+输入: &ldquo;(]&rdquo;
+输出: false</p>
+<p>示例 4:
+输入: &ldquo;([)]&rdquo;
+输出: false</p>
+<p>示例 5:
+输入: &ldquo;{[]}&rdquo;
+输出: true</p>
+<h2 id="heading-1">解题思想：</h2>
+<ul>
+<li>根据字符串的长度建立一个顺序存储结构的栈</li>
+<li>逐一读取字符串中的字符，只要是左括号都压入栈内</li>
+<li>若遇到右括号则与栈顶元素相比较，若不匹配则返回false，若匹配，则出栈栈顶左括号，继续读取字符</li>
+<li>最后返回栈顶序号的取反值：若还有左括号在栈中即为false，若栈为空为true</li>
+</ul>
+<h2 id="heading-2">代码：</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">isValid</span>(<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span> s){
+    <span style="color:#66d9ef">int</span> top <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">int</span> i;
+
+    <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> p <span style="color:#f92672">=</span> (<span style="color:#66d9ef">char</span><span style="color:#f92672">*</span>)malloc(strlen(s) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>);
+    <span style="color:#66d9ef">for</span>(i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;i <span style="color:#f92672">&lt;</span> strlen(s);i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+    {
+        <span style="color:#66d9ef">if</span>((s[i] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">(</span><span style="color:#e6db74">&#39;</span>) <span style="color:#f92672">|</span><span style="color:#f92672">|</span> (s[i] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">[</span><span style="color:#e6db74">&#39;</span>) <span style="color:#f92672">|</span><span style="color:#f92672">|</span> (s[i] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span><span style="color:#e6db74">&#39;</span>)){
+             p[top<span style="color:#f92672">+</span><span style="color:#f92672">+</span>] <span style="color:#f92672">=</span> s[i];
+        }
+        <span style="color:#66d9ef">else</span>{
+            <span style="color:#66d9ef">if</span>((<span style="color:#f92672">-</span><span style="color:#f92672">-</span>top) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>)<span style="color:#75715e">//top先减一，指向栈顶元素
+</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">return</span> false;
+            <span style="color:#66d9ef">if</span>(s[i] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">)</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> p[top] <span style="color:#f92672">!</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">(</span><span style="color:#e6db74">&#39;</span>)
+                <span style="color:#66d9ef">return</span> false;
+            <span style="color:#66d9ef">if</span>(s[i] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">]</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> p[top] <span style="color:#f92672">!</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">[</span><span style="color:#e6db74">&#39;</span>)
+                <span style="color:#66d9ef">return</span> false;
+            <span style="color:#66d9ef">if</span>(s[i] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> p[top] <span style="color:#f92672">!</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span><span style="color:#e6db74">&#39;</span>)
+                <span style="color:#66d9ef">return</span> false;
+        }
+           
+    }
+    free(p);
+    <span style="color:#66d9ef">return</span> <span style="color:#f92672">!</span>top;
+}
+</code></pre></div> </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+</div>
+
+    <div class="date"> 5 Jan 2020 </div>
+  </div>
+
+</footer>
+
+
+  
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:weiluoyangcheng@outlook.com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/leo-AJ" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="https//:leo-AJ.github.io/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> 版权为敖晋个人所有 </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+
