@@ -10,12 +10,12 @@
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <meta name="generator" content="Hugo 0.62.0" />
 
-<link rel="canonical" href="https://leo-aj.github.io/">
+<link rel="canonical" href="https://leo-AJ.github.io/">
 <meta property="og:title" content="魏落阳城的博客" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://leo-aj.github.io/" />
-<meta property="og:updated_time" content="2020-01-07T17:41:29+08:00" />
+<meta property="og:url" content="https://leo-AJ.github.io/" />
+<meta property="og:updated_time" content="2020-01-29T15:31:40+08:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="魏落阳城的博客"/>
@@ -25,10 +25,10 @@
 <meta itemprop="name" content="魏落阳城的博客">
 <meta itemprop="description" content="">
 
-<link rel="stylesheet" href="https://leo-aj.github.io/css/layout.css" />
+<link rel="stylesheet" href="https://leo-AJ.github.io/css/layout.css" />
 
 
-<link rel="stylesheet" href="https://leo-aj.github.io/css/default-dark.css" />
+<link rel="stylesheet" href="https://leo-AJ.github.io/css/default-dark.css" />
 
 
 
@@ -51,14 +51,14 @@
 
   <nav>
     <div class="siteTitle">
-      <a href="https://leo-aj.github.io/">魏落阳城的博客</a>
+      <a href="https://leo-AJ.github.io/">魏落阳城的博客</a>
     </div> 
 
     
     
-    <a class="nav-item" href="https://leo-aj.github.io/post/"><div class="nav-item-title">Posts</div></a>
+    <a class="nav-item" href="https://leo-AJ.github.io/post/"><div class="nav-item-title">Posts</div></a>
     
-    <a class="nav-item" href="https://leo-aj.github.io/tags/"><div class="nav-item-title">Tags</div></a>
+    <a class="nav-item" href="https://leo-AJ.github.io/tags/"><div class="nav-item-title">Tags</div></a>
     
 
   </nav>
@@ -96,7 +96,43 @@
     <article class="post-preview">
 
   <header>
-    <h2 class="title"> <a href='https://leo-aj.github.io/post/%E6%A0%88%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/'> 栈的链式存储结构</a> </h2>
+    <h2 class="title"> <a href='https://leo-AJ.github.io/post/%E5%88%B7%E9%A2%98-%E6%A0%881c/'> 刷题 栈1(C)</a> </h2>
+    <div class="meta">
+      <div class="date">
+      5 Jan, 2020 - 1 minutes
+      </div>
+      
+<div class="tags">
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    刷题-栈1 （C语言） 题目描述： 给定一个只包括 &lsquo;('，')'，'{'，'}'，'['，']&rsquo; 的字符串，判断字符串是否有效。
+有效字符串需满足：
+ 左括号必须用相同类型的右括号闭合。 左括号必须以正确的顺序闭合。  示例 1: 输入: &ldquo;()&rdquo; 输出: true
+示例 2: 输入: &ldquo;()[]{}&rdquo; 输出: true
+示例 3: 输入: &ldquo;(]&rdquo; 输出: false
+示例 4: 输入: &ldquo;([)]&rdquo; 输出: false
+示例 5: 输入: &ldquo;{[]}&rdquo; 输出: true
+解题思想：  根据字符串的长度建立一个顺序存储结构的栈 逐一读取字符串中的字符，只要是左括号都压入栈内 若遇到右括号则与栈顶元素相比较，若不匹配则返回false，若匹配，则出栈栈顶左括号，继续读取字符 最后返回栈顶序号的取反值：若还有左括号在栈中即为false，若栈为空为true  代码： bool isValid(char * s){ int top = 0; int i; char* p = (char*)malloc(strlen(s) + 1); for(i = 0;i &lt; strlen(s);i++) { if((s[i] == &#39;(&#39;) || (s[i] == &#39;[&#39;) || (s[i] == &#39;{&#39;)){ p[top++] = s[i]; } else{ if((--top) &lt; 0)//top先减一，指向栈顶元素  return false; if(s[i] == &#39;)&#39; &amp;&amp; p[top] !
+  </div>
+
+  <div class="rmore">
+    <a href='https://leo-AJ.github.io/post/%E5%88%B7%E9%A2%98-%E6%A0%881c/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://leo-AJ.github.io/post/%E6%A0%88%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/'> 栈的链式存储结构</a> </h2>
     <div class="meta">
       <div class="date">
       4 Jan, 2020 - 2 minutes
@@ -117,7 +153,7 @@
   </div>
 
   <div class="rmore">
-    <a href='https://leo-aj.github.io/post/%E6%A0%88%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/' class="rmore">Read more</a>
+    <a href='https://leo-AJ.github.io/post/%E6%A0%88%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/' class="rmore">Read more</a>
   </div>
 
 
@@ -127,7 +163,7 @@
     <article class="post-preview">
 
   <header>
-    <h2 class="title"> <a href='https://leo-aj.github.io/post/%E5%88%B7%E9%A2%98-%E9%93%BE%E8%A1%A81c%E8%AF%AD%E8%A8%80/'> 刷题 链表1（C语言）</a> </h2>
+    <h2 class="title"> <a href='https://leo-AJ.github.io/post/%E5%88%B7%E9%A2%98-%E9%93%BE%E8%A1%A81c%E8%AF%AD%E8%A8%80/'> 刷题 链表1（C语言）</a> </h2>
     <div class="meta">
       <div class="date">
       3 Jan, 2020 - 1 minutes
@@ -149,36 +185,7 @@
   </div>
 
   <div class="rmore">
-    <a href='https://leo-aj.github.io/post/%E5%88%B7%E9%A2%98-%E9%93%BE%E8%A1%A81c%E8%AF%AD%E8%A8%80/' class="rmore">Read more</a>
-  </div>
-
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='https://leo-aj.github.io/post/%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/'> 线性表的链式存储结构</a> </h2>
-    <div class="meta">
-      <div class="date">
-      2 Jan, 2020 - 2 minutes
-      </div>
-      
-<div class="tags">
-    
-</div>
-
-    </div>
-
-  </header>
-
-  <div class="summary">
-    线性表的链式存储结构 先上代码： #ifndef _LIST_H_#define _LIST_H_ #include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;time.h&gt; typedef int ElemType; typedef struct Node { ElemType data; struct Node* next; } Node; typedef struct Node* LinkList; void CreateListHead(LinkList *L,int n); int TraveList(LinkList L); int getElem(LinkList L,int i,ElemType* e); int ListInsert(LinkList* L,int i,ElemType e); int ListDelete(LinkList* L,int i,ElemType* e); int ClearList(LinkList* L); #endif // _LIST_H_  #include &#34;list.h&#34; void CreateListHead(LinkList* L,int n){ LinkList p; int i; *L = (LinkList)malloc(sizeof(Node)); (*L)-&gt;next = NULL; srand(time(0));//初始化随机数种子  for(i = 0;i &lt; n;i++){ p = (LinkList)malloc(sizeof(Node));//为新节点开辟空间  p-&gt;data = rand()%100 + 1; p-&gt;next = (*L)-&gt;next; (*L)-&gt;next = p; } } int TraveList(LinkList L) { int i = 0; LinkList p; p = L; while(p-&gt;next) { i++; p=p-&gt;next; printf(&#34;the number is %d,the data is %d\n&#34;,i,p-&gt;data); } return i; } int getElem(LinkList L,int i,ElemType* e){ int j = 1; LinkList p; p = L-&gt;next; while(p &amp;&amp; j&lt;i) { p = p-&gt;next; j++; } if(!
-  </div>
-
-  <div class="rmore">
-    <a href='https://leo-aj.github.io/post/%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/' class="rmore">Read more</a>
+    <a href='https://leo-AJ.github.io/post/%E5%88%B7%E9%A2%98-%E9%93%BE%E8%A1%A81c%E8%AF%AD%E8%A8%80/' class="rmore">Read more</a>
   </div>
 
 
@@ -190,7 +197,7 @@
 <div class="page-nav">
   <div class="page-prev">
     
-        <a href="https://leo-aj.github.io/" title="Previous page" > &lt;&lt; </a>
+        <a href="https://leo-AJ.github.io/" title="Previous page" > &lt;&lt; </a>
     
   </div> 
 
@@ -200,7 +207,7 @@
 
   <div class="page-next">
     
-    <a href="https://leo-aj.github.io/page/3/" title="Next page"> >> </a>
+    <a href="https://leo-AJ.github.io/page/3/" title="Next page"> >> </a>
     
   </div> 
 </div> 
@@ -227,7 +234,7 @@
   
 
   <div class="social-link">
-  <a href="https://leo-aj.github.io/index.xml" target="_blank">RSS</a>
+  <a href="https://leo-AJ.github.io/index.xml" target="_blank">RSS</a>
   </div>
 
 </div>
