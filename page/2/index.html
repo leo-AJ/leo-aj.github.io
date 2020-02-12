@@ -15,7 +15,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://leo-aj.github.io/" />
-<meta property="og:updated_time" content="2020-02-10T14:52:50+08:00" />
+<meta property="og:updated_time" content="2020-02-12T17:27:20+08:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="魏落阳城的博客"/>
@@ -96,6 +96,38 @@
     <article class="post-preview">
 
   <header>
+    <h2 class="title"> <a href='https://leo-aj.github.io/post/%E4%BA%8C%E5%8F%89%E6%A0%91/'> 二叉树</a> </h2>
+    <div class="meta">
+      <div class="date">
+      29 Jan, 2020 - 1 minutes
+      </div>
+      
+<div class="tags">
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    二叉树（Binary Tree） 概念： 二叉树是n（n&gt;=0）个结点的有限集合，该集合或者为空，或者由一个根节点和两颗互不相交的、分别称为根节点的左子树和右子树的二叉树组成。
+特点：  每个结点最多有两棵子树 左子树和右子树是有顺序的 即使树中某结点只有一颗子树，也要区分它是左子树还是右子树  特殊的二叉树：  满二叉树：在一颗二叉树中，如果所有分支结点都存在左子树和右子树，并且所有叶子都在同一层上。 完全二叉树：对于一棵具有n个节点的二叉树按照层次编号，同时，左右子树按照先左后右编号，如果编号为i的节点与同样深度的满二叉树中编号为i的节点在二叉树中的位置完全相同，则这棵二叉树称为完全二叉树。  性质：  在二叉树的第i层中至多有2^(i-1)个结点 深度为k的二叉树至多有(2^k)-1个结点 对一棵二叉树，如果叶子节点的个数为n0，度为2的节点个数为n2，则n0=n2+1 具有n个结点的完全二叉树的深度为[log2n]+1 对于一棵有n个结点的完全二叉树的结点按层序号，对任意结点i有  如果i = 1，则结点i是二叉树的根，无双亲；如果i&gt;1，则双亲是结点(i/2) 如果2i&gt;n,则结点i无左右孩子；否则其左右孩子是结点2i 如果2i+1&gt;n，则结点i无右孩子；否则其右孩子是结点2i+1    链式存储结构 typedef int TElemType; typedef struct BiTNode { TElemType data; struct BiTNode *lchild,*rchild; } BiTNode,*BiTree; 二叉树的遍历   前序遍历：若二叉树为空，则返回；否则先访问根节点，然后前序遍历左子树，再遍历右子树。
+void PreOrderTraverse(BiTree T) { if(T == NULL) return; printf(&#34;%d&#34;,T-&gt;data); PreOrderTraverse(T-&gt;lchild); PreOrderTraverse(T-&gt;rchild); }   中序遍历：若二叉树为空，则返回；否则从根结点开始，中序遍历跟结点的左子树，然后访问根节点，最后中序遍历右子树
+void InOrderTraverse(BiTree T) { if(T == NULL) return PreOrderTraverse(T-&gt;lchild); printf(&#34;%d&#34;,T-&gt;data); PreOrderTraverse(T-&gt;rchild); }   后续遍历：若二叉树为空，则返回；否则从左子树到右子树后结点的方式遍历访问左右子树，最后访问根节点
+  </div>
+
+  <div class="rmore">
+    <a href='https://leo-aj.github.io/post/%E4%BA%8C%E5%8F%89%E6%A0%91/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
     <h2 class="title"> <a href='https://leo-aj.github.io/post/%E5%88%B7%E9%A2%98-%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6go%E8%AF%AD%E8%A8%80/'> 刷题 任务调度Go语言</a> </h2>
     <div class="meta">
       <div class="date">
@@ -150,42 +182,6 @@
 
   <div class="rmore">
     <a href='https://leo-aj.github.io/post/%E9%98%9F%E5%88%97%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/' class="rmore">Read more</a>
-  </div>
-
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='https://leo-aj.github.io/post/%E5%88%B7%E9%A2%98-%E6%A0%881c/'> 刷题 栈1(C)</a> </h2>
-    <div class="meta">
-      <div class="date">
-      5 Jan, 2020 - 1 minutes
-      </div>
-      
-<div class="tags">
-    
-</div>
-
-    </div>
-
-  </header>
-
-  <div class="summary">
-    刷题-栈1 （C语言） 题目描述： 给定一个只包括 &lsquo;('，')'，'{'，'}'，'['，']&rsquo; 的字符串，判断字符串是否有效。
-有效字符串需满足：
- 左括号必须用相同类型的右括号闭合。 左括号必须以正确的顺序闭合。  示例 1: 输入: &ldquo;()&rdquo; 输出: true
-示例 2: 输入: &ldquo;()[]{}&rdquo; 输出: true
-示例 3: 输入: &ldquo;(]&rdquo; 输出: false
-示例 4: 输入: &ldquo;([)]&rdquo; 输出: false
-示例 5: 输入: &ldquo;{[]}&rdquo; 输出: true
-解题思想：  根据字符串的长度建立一个顺序存储结构的栈 逐一读取字符串中的字符，只要是左括号都压入栈内 若遇到右括号则与栈顶元素相比较，若不匹配则返回false，若匹配，则出栈栈顶左括号，继续读取字符 最后返回栈顶序号的取反值：若还有左括号在栈中即为false，若栈为空为true  代码： bool isValid(char * s){ int top = 0; int i; char* p = (char*)malloc(strlen(s) + 1); for(i = 0;i &lt; strlen(s);i++) { if((s[i] == &#39;(&#39;) || (s[i] == &#39;[&#39;) || (s[i] == &#39;{&#39;)){ p[top++] = s[i]; } else{ if((--top) &lt; 0)//top先减一，指向栈顶元素  return false; if(s[i] == &#39;)&#39; &amp;&amp; p[top] !
-  </div>
-
-  <div class="rmore">
-    <a href='https://leo-aj.github.io/post/%E5%88%B7%E9%A2%98-%E6%A0%881c/' class="rmore">Read more</a>
   </div>
 
 

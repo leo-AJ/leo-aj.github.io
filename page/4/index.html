@@ -15,7 +15,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://leo-aj.github.io/" />
-<meta property="og:updated_time" content="2020-02-10T14:52:50+08:00" />
+<meta property="og:updated_time" content="2020-02-12T17:27:20+08:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="魏落阳城的博客"/>
@@ -93,6 +93,35 @@
 
 
   
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://leo-aj.github.io/post/%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/'> 线性表的链式存储结构</a> </h2>
+    <div class="meta">
+      <div class="date">
+      2 Jan, 2020 - 2 minutes
+      </div>
+      
+<div class="tags">
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    线性表的链式存储结构 先上代码： #ifndef _LIST_H_#define _LIST_H_ #include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;time.h&gt; typedef int ElemType; typedef struct Node { ElemType data; struct Node* next; } Node; typedef struct Node* LinkList; void CreateListHead(LinkList *L,int n); int TraveList(LinkList L); int getElem(LinkList L,int i,ElemType* e); int ListInsert(LinkList* L,int i,ElemType e); int ListDelete(LinkList* L,int i,ElemType* e); int ClearList(LinkList* L); #endif // _LIST_H_  #include &#34;list.h&#34; void CreateListHead(LinkList* L,int n){ LinkList p; int i; *L = (LinkList)malloc(sizeof(Node)); (*L)-&gt;next = NULL; srand(time(0));//初始化随机数种子  for(i = 0;i &lt; n;i++){ p = (LinkList)malloc(sizeof(Node));//为新节点开辟空间  p-&gt;data = rand()%100 + 1; p-&gt;next = (*L)-&gt;next; (*L)-&gt;next = p; } } int TraveList(LinkList L) { int i = 0; LinkList p; p = L; while(p-&gt;next) { i++; p=p-&gt;next; printf(&#34;the number is %d,the data is %d\n&#34;,i,p-&gt;data); } return i; } int getElem(LinkList L,int i,ElemType* e){ int j = 1; LinkList p; p = L-&gt;next; while(p &amp;&amp; j&lt;i) { p = p-&gt;next; j++; } if(!
+  </div>
+
+  <div class="rmore">
+    <a href='https://leo-aj.github.io/post/%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
     <article class="post-preview">
 
   <header>

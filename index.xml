@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>版权为敖晋个人所有</copyright>
-    <lastBuildDate>Mon, 10 Feb 2020 14:52:50 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 12 Feb 2020 17:27:20 +0800</lastBuildDate>
     
 	<atom:link href="https://leo-aj.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>排序算法2</title>
+      <link>https://leo-aj.github.io/post/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%952/</link>
+      <pubDate>Wed, 12 Feb 2020 17:27:20 +0800</pubDate>
+      
+      <guid>https://leo-aj.github.io/post/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%952/</guid>
+      <description>简单排序算法 公用部分 #define MAXSIZE 10typedef struct { int r[MAXSIZE+1];//r[0]用作哨兵或临时变量  int length; }SqList; void swap(SqList *L,int i,int j) { int temp = L-&amp;gt;r[i]; L-&amp;gt;r[i] = L-&amp;gt;r[j]; L-&amp;gt;r[j] = temp; } 堆排序 堆是具有下列性质的完全二叉树：
+ 每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆。 每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆。  将待排序的序列构造成一个大顶堆。此时，整个序列的最大值就是堆顶的根结点。将他移走，然后将剩余的n-1个序列重新构造成一个堆，这样就会得到n个元素中的次大值。如此反复执行，便能得到一个有序序列。
+void HaepSort(SqList *L) { int i; //构造大顶堆  for(i=L-&amp;gt;length/2;i&amp;gt;0;i--)/*序列从0到L-&amp;gt;length/2，都是有孩子的结点*/ { HeapAdjust(L,i,L-&amp;gt;length); } //将堆顶元素和最后一个元素交换，得到有序序列  for(i=L-&amp;gt;length;i&amp;gt;1;i++) { swap(L,1,i); HeapAdjust(L,1,i-1); } } void HeapAdjust(SqList *L,int s,int m) { int temp,j; temp = L-&amp;gt;r[s]; for(j=2*s;j&amp;lt;=m;j*=2)//找到左右子结点  { if(j &amp;lt; m &amp;amp;&amp;amp; L-&amp;gt;r[j] &amp;lt; L-&amp;gt;r[j+1])//找到相对较大的孩子结点  ++j; if(temp &amp;gt;= L-&amp;gt;r[j]) break; //交换值  L-&amp;gt;r[s] = L-&amp;gt;r[j]; s = j; //若j*=2后小于等于m,则继续向下层执行  } //交换值  L-&amp;gt;r[s] = temp; } 归并排序 假设初始序列有含有n个记录，则可以看成是n个有序序列的子序列，每个子序列的长度为1，然后两辆归并，得到[n/2]个长度为2或1的有序子序列；再两两归并&amp;hellip;.</description>
+    </item>
     
     <item>
       <title>排序算法1</title>

@@ -15,7 +15,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://leo-aj.github.io/" />
-<meta property="og:updated_time" content="2020-02-10T14:52:50+08:00" />
+<meta property="og:updated_time" content="2020-02-12T17:27:20+08:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="魏落阳城的博客"/>
@@ -96,6 +96,37 @@
     <article class="post-preview">
 
   <header>
+    <h2 class="title"> <a href='https://leo-aj.github.io/post/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%952/'> 排序算法2</a> </h2>
+    <div class="meta">
+      <div class="date">
+      12 Feb, 2020 - 2 minutes
+      </div>
+      
+<div class="tags">
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    简单排序算法 公用部分 #define MAXSIZE 10typedef struct { int r[MAXSIZE+1];//r[0]用作哨兵或临时变量  int length; }SqList; void swap(SqList *L,int i,int j) { int temp = L-&gt;r[i]; L-&gt;r[i] = L-&gt;r[j]; L-&gt;r[j] = temp; } 堆排序 堆是具有下列性质的完全二叉树：
+ 每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆。 每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆。  将待排序的序列构造成一个大顶堆。此时，整个序列的最大值就是堆顶的根结点。将他移走，然后将剩余的n-1个序列重新构造成一个堆，这样就会得到n个元素中的次大值。如此反复执行，便能得到一个有序序列。
+void HaepSort(SqList *L) { int i; //构造大顶堆  for(i=L-&gt;length/2;i&gt;0;i--)/*序列从0到L-&gt;length/2，都是有孩子的结点*/ { HeapAdjust(L,i,L-&gt;length); } //将堆顶元素和最后一个元素交换，得到有序序列  for(i=L-&gt;length;i&gt;1;i++) { swap(L,1,i); HeapAdjust(L,1,i-1); } } void HeapAdjust(SqList *L,int s,int m) { int temp,j; temp = L-&gt;r[s]; for(j=2*s;j&lt;=m;j*=2)//找到左右子结点  { if(j &lt; m &amp;&amp; L-&gt;r[j] &lt; L-&gt;r[j+1])//找到相对较大的孩子结点  ++j; if(temp &gt;= L-&gt;r[j]) break; //交换值  L-&gt;r[s] = L-&gt;r[j]; s = j; //若j*=2后小于等于m,则继续向下层执行  } //交换值  L-&gt;r[s] = temp; } 归并排序 假设初始序列有含有n个记录，则可以看成是n个有序序列的子序列，每个子序列的长度为1，然后两辆归并，得到[n/2]个长度为2或1的有序子序列；再两两归并&hellip;.
+  </div>
+
+  <div class="rmore">
+    <a href='https://leo-aj.github.io/post/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%952/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
     <h2 class="title"> <a href='https://leo-aj.github.io/post/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%951/'> 排序算法1</a> </h2>
     <div class="meta">
       <div class="date">
@@ -155,38 +186,6 @@ func inorderTraversal(root *TreeNode) []int{ valueList := make([]int, 0)//每次
 
   <div class="rmore">
     <a href='https://leo-aj.github.io/post/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%88%B7%E9%A2%98-go%E8%AF%AD%E8%A8%80/' class="rmore">Read more</a>
-  </div>
-
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='https://leo-aj.github.io/post/%E4%BA%8C%E5%8F%89%E6%A0%91/'> 二叉树</a> </h2>
-    <div class="meta">
-      <div class="date">
-      29 Jan, 2020 - 1 minutes
-      </div>
-      
-<div class="tags">
-    
-</div>
-
-    </div>
-
-  </header>
-
-  <div class="summary">
-    二叉树（Binary Tree） 概念： 二叉树是n（n&gt;=0）个结点的有限集合，该集合或者为空，或者由一个根节点和两颗互不相交的、分别称为根节点的左子树和右子树的二叉树组成。
-特点：  每个结点最多有两棵子树 左子树和右子树是有顺序的 即使树中某结点只有一颗子树，也要区分它是左子树还是右子树  特殊的二叉树：  满二叉树：在一颗二叉树中，如果所有分支结点都存在左子树和右子树，并且所有叶子都在同一层上。 完全二叉树：对于一棵具有n个节点的二叉树按照层次编号，同时，左右子树按照先左后右编号，如果编号为i的节点与同样深度的满二叉树中编号为i的节点在二叉树中的位置完全相同，则这棵二叉树称为完全二叉树。  性质：  在二叉树的第i层中至多有2^(i-1)个结点 深度为k的二叉树至多有(2^k)-1个结点 对一棵二叉树，如果叶子节点的个数为n0，度为2的节点个数为n2，则n0=n2+1 具有n个结点的完全二叉树的深度为[log2n]+1 对于一棵有n个结点的完全二叉树的结点按层序号，对任意结点i有  如果i = 1，则结点i是二叉树的根，无双亲；如果i&gt;1，则双亲是结点(i/2) 如果2i&gt;n,则结点i无左右孩子；否则其左右孩子是结点2i 如果2i+1&gt;n，则结点i无右孩子；否则其右孩子是结点2i+1    链式存储结构 typedef int TElemType; typedef struct BiTNode { TElemType data; struct BiTNode *lchild,*rchild; } BiTNode,*BiTree; 二叉树的遍历   前序遍历：若二叉树为空，则返回；否则先访问根节点，然后前序遍历左子树，再遍历右子树。
-void PreOrderTraverse(BiTree T) { if(T == NULL) return; printf(&#34;%d&#34;,T-&gt;data); PreOrderTraverse(T-&gt;lchild); PreOrderTraverse(T-&gt;rchild); }   中序遍历：若二叉树为空，则返回；否则从根结点开始，中序遍历跟结点的左子树，然后访问根节点，最后中序遍历右子树
-void InOrderTraverse(BiTree T) { if(T == NULL) return PreOrderTraverse(T-&gt;lchild); printf(&#34;%d&#34;,T-&gt;data); PreOrderTraverse(T-&gt;rchild); }   后续遍历：若二叉树为空，则返回；否则从左子树到右子树后结点的方式遍历访问左右子树，最后访问根节点
-  </div>
-
-  <div class="rmore">
-    <a href='https://leo-aj.github.io/post/%E4%BA%8C%E5%8F%89%E6%A0%91/' class="rmore">Read more</a>
   </div>
 
 
