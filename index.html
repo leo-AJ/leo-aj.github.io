@@ -15,7 +15,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://leo-aj.github.io/" />
-<meta property="og:updated_time" content="2020-02-14T21:42:58+08:00" />
+<meta property="og:updated_time" content="2020-02-17T16:16:00+08:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="魏落阳城的博客"/>
@@ -96,6 +96,39 @@
     <article class="post-preview">
 
   <header>
+    <h2 class="title"> <a href='https://leo-aj.github.io/post/%E6%8E%92%E5%BA%8F%E5%88%B7%E9%A2%982go/'> 排序刷题2(Go)</a> </h2>
+    <div class="meta">
+      <div class="date">
+      17 Feb, 2020 - 2 minutes
+      </div>
+      
+<div class="tags">
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    两个数组的交集 题目描述 给定两个数组，编写一个函数来计算它们的交集。
+示例1：
+输入: nums1 = [1,2,2,1], nums2 = [2,2] 输出: [2] 示例2:
+输入: nums1 = [4,9,5], nums2 = [9,4,9,8,4] 输出: [9,4] 说明：
+ 输出结果中的每个元素一定是唯一的。 我们可以不考虑输出结果的顺序。  解题思路  遍历其中一个数组，找到在另外一个数组有相同值的数，添加到新建的切片中。 去除重复值。 这里可以运用map来转换，把数组一当键值；用数组二去查找，有相应键值，则标记；最后统计map中有标记的键值存入新建的切片中返回。  代码 func intersection(nums1 []int, nums2 []int) []int { r := []int{} m := make(map[int]int,len(nums1)) for _,v := range nums1 { m[v] = 0 } for _,v := range nums2 { if _,ok := m[v];ok { m[v] = 1 } } for i := range m { if m[i] !
+  </div>
+
+  <div class="rmore">
+    <a href='https://leo-aj.github.io/post/%E6%8E%92%E5%BA%8F%E5%88%B7%E9%A2%982go/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
     <h2 class="title"> <a href='https://leo-aj.github.io/post/%E6%8E%92%E5%BA%8F%E5%88%B7%E9%A2%981go/'> 排序刷题1(Go)</a> </h2>
     <div class="meta">
       <div class="date">
@@ -156,38 +189,6 @@ void HaepSort(SqList *L) { int i; //构造大顶堆  for(i=L-&gt;length/2;i&gt;0
 
   <div class="rmore">
     <a href='https://leo-aj.github.io/post/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%952/' class="rmore">Read more</a>
-  </div>
-
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='https://leo-aj.github.io/post/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%951/'> 排序算法1</a> </h2>
-    <div class="meta">
-      <div class="date">
-      10 Feb, 2020 - 1 minutes
-      </div>
-      
-<div class="tags">
-    
-</div>
-
-    </div>
-
-  </header>
-
-  <div class="summary">
-    简单的排序算法 公用部分 #define MAXSIZE 10typedef struct { int r[MAXSIZE+1];//r[0]用作哨兵或临时变量  int length; }SqList; void swap(SqList *L,int i,int j) { int temp = L-&gt;r[i]; L-&gt;r[i] = L-&gt;r[j]; L-&gt;r[j] = temp; } 冒泡排序 每次循环都将最小的数移动到前面，并且在循环过程中也有部分较小的数位置被前移
-void BubbleSort(SqList *L) { int i,j; for(i=1;i &lt; L-&gt;length;i++) { for(j=L-&gt;length-1;j&gt;=i;j--) { if(L-&gt;r[j] &gt; L-&gt;r[i]) swap(L,j,j+1); } } } 优化
-当经过一次外层循环时，若没有发生交换，则说明已经排序完成，可以结束
-void BubbleSort2(SqList *L) { int i,j; int flag = 1; for(i=1;i&lt;L-&gt;length-1 &amp;&amp; flag;i++) { flag = 0; for(j=L-&gt;length;j&gt;=i;j--) { if(L-&gt;r[j] &gt; L-&gt;r[i]) { swap(L,j,j+1); flag = 1; } } } } 简单选择排序 每经过一次外层循环，找到最小的数字，进行交换
-  </div>
-
-  <div class="rmore">
-    <a href='https://leo-aj.github.io/post/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%951/' class="rmore">Read more</a>
   </div>
 
 

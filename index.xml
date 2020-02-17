@@ -7,10 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>版权为敖晋个人所有</copyright>
-    <lastBuildDate>Fri, 14 Feb 2020 21:42:58 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 17 Feb 2020 16:16:00 +0800</lastBuildDate>
     
 	<atom:link href="https://leo-aj.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>排序刷题2(Go)</title>
+      <link>https://leo-aj.github.io/post/%E6%8E%92%E5%BA%8F%E5%88%B7%E9%A2%982go/</link>
+      <pubDate>Mon, 17 Feb 2020 16:16:00 +0800</pubDate>
+      
+      <guid>https://leo-aj.github.io/post/%E6%8E%92%E5%BA%8F%E5%88%B7%E9%A2%982go/</guid>
+      <description>两个数组的交集 题目描述 给定两个数组，编写一个函数来计算它们的交集。
+示例1：
+输入: nums1 = [1,2,2,1], nums2 = [2,2] 输出: [2] 示例2:
+输入: nums1 = [4,9,5], nums2 = [9,4,9,8,4] 输出: [9,4] 说明：
+ 输出结果中的每个元素一定是唯一的。 我们可以不考虑输出结果的顺序。  解题思路  遍历其中一个数组，找到在另外一个数组有相同值的数，添加到新建的切片中。 去除重复值。 这里可以运用map来转换，把数组一当键值；用数组二去查找，有相应键值，则标记；最后统计map中有标记的键值存入新建的切片中返回。  代码 func intersection(nums1 []int, nums2 []int) []int { r := []int{} m := make(map[int]int,len(nums1)) for _,v := range nums1 { m[v] = 0 } for _,v := range nums2 { if _,ok := m[v];ok { m[v] = 1 } } for i := range m { if m[i] !</description>
+    </item>
     
     <item>
       <title>排序刷题1(Go)</title>
